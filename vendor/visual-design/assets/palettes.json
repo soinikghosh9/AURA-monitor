@@ -1,0 +1,314 @@
+{
+  "house": {
+    "use": "house style from the NeuroIPS and Alzbcpbcp figures: desaturated, ink-forward; default for papers",
+    "names": [
+      "teal",
+      "terracotta",
+      "blue",
+      "sage",
+      "plum"
+    ],
+    "data": [
+      "#319287",
+      "#AC704E",
+      "#326893",
+      "#809D62",
+      "#835A8C"
+    ],
+    "soft": [
+      "#ADD3CF",
+      "#DEC6B8",
+      "#ADC3D4",
+      "#CCD8C0",
+      "#CDBDD1"
+    ],
+    "tint": [
+      "#E2F0EE",
+      "#F3EBE6",
+      "#E2EAF0",
+      "#EDF1E9",
+      "#EEE8EF"
+    ],
+    "ink": "#22282D",
+    "scatter_safe": false,
+    "notes": [
+      "chroma about 0.09, just under the dataviz grey floor, by design; neighbours pass colour-blind checks in this order",
+      "semantic status colours: normal #5F8A6B, borderline #C29049, abnormal #A85549"
+    ]
+  },
+  "balanced-six": {
+    "use": "five or six series in one figure; the most neutral mix",
+    "names": [
+      "teal",
+      "ochre",
+      "plum",
+      "moss",
+      "slate",
+      "clay"
+    ],
+    "data": [
+      "#099393",
+      "#B68A3F",
+      "#8A4976",
+      "#689C5D",
+      "#3B639F",
+      "#A95C45"
+    ],
+    "soft": null,
+    "tint": null,
+    "ink": "#2B2A28",
+    "scatter_safe": false,
+    "notes": [
+      "scatter: use only teal, ochre, plum"
+    ]
+  },
+  "sage-clay": {
+    "use": "calm, earthy; clinical results, the default for papers",
+    "names": [
+      "sage",
+      "stone blue",
+      "clay",
+      "sand"
+    ],
+    "data": [
+      "#569158",
+      "#2376A4",
+      "#995134",
+      "#B18A3E"
+    ],
+    "soft": [
+      "#AFCEAF",
+      "#A4CAE4",
+      "#E4B9A9",
+      "#D6C19C"
+    ],
+    "tint": [
+      "#E4F6E4",
+      "#E2F3FF",
+      "#FDECE5",
+      "#FAEFDA"
+    ],
+    "ink": "#293E29",
+    "scatter_safe": false,
+    "notes": []
+  },
+  "dusk-plum": {
+    "use": "brain and neuro topics, interpretability figures",
+    "names": [
+      "lavender",
+      "apricot",
+      "plum",
+      "dusty rose"
+    ],
+    "data": [
+      "#857BC1",
+      "#BE8149",
+      "#773761",
+      "#AF5E6A"
+    ],
+    "soft": [
+      "#C3BFE6",
+      "#DFBDA0",
+      "#DEB7CE",
+      "#E5B6BB"
+    ],
+    "tint": [
+      "#EFEEFE",
+      "#FEEDDE",
+      "#FEE9F5",
+      "#FEEBEC"
+    ],
+    "ink": "#37344E",
+    "scatter_safe": false,
+    "notes": []
+  },
+  "harbor": {
+    "use": "cool and technical; architecture diagrams, dashboards",
+    "names": [
+      "sea glass",
+      "steel blue",
+      "sand",
+      "rust"
+    ],
+    "data": [
+      "#0E9A94",
+      "#32669D",
+      "#B2893E",
+      "#9C513C"
+    ],
+    "soft": [
+      "#9BD0CC",
+      "#ABC7E7",
+      "#D7C19C",
+      "#E5B8AC"
+    ],
+    "tint": [
+      "#DAF7F4",
+      "#E6F1FE",
+      "#FBEEDA",
+      "#FEECE7"
+    ],
+    "ink": "#173F3D",
+    "scatter_safe": true,
+    "notes": []
+  },
+  "olive-grove": {
+    "use": "warm naturals; cohort and dataset overviews",
+    "names": [
+      "olive",
+      "bark",
+      "heather",
+      "moss"
+    ],
+    "data": [
+      "#888633",
+      "#8B491F",
+      "#9B7BBF",
+      "#2F7442"
+    ],
+    "soft": [
+      "#C7C79E",
+      "#E2BAA5",
+      "#CCBCE1",
+      "#ACCFB2"
+    ],
+    "tint": [
+      "#F2F2DB",
+      "#FEECE2",
+      "#F4ECFE",
+      "#E3F6E6"
+    ],
+    "ink": "#3A3A1D",
+    "scatter_safe": false,
+    "notes": []
+  },
+  "lavender-mint": {
+    "use": "soft and modern; slides, posters, UI accents",
+    "names": [
+      "mint",
+      "indigo",
+      "lavender",
+      "blush"
+    ],
+    "data": [
+      "#3EA080",
+      "#3C518F",
+      "#837BC2",
+      "#9B506B"
+    ],
+    "soft": [
+      "#A2D0BD",
+      "#B5C4E9",
+      "#C2BFE7",
+      "#E3B6C4"
+    ],
+    "tint": [
+      "#DEF7EC",
+      "#EAF0FF",
+      "#EFEEFE",
+      "#FFEAF0"
+    ],
+    "ink": "#1E3F33",
+    "scatter_safe": true,
+    "notes": []
+  },
+  "terracotta-aubergine": {
+    "use": "warm contrast; case-control and two-group comparisons",
+    "names": [
+      "terracotta",
+      "aubergine",
+      "mustard",
+      "deep teal"
+    ],
+    "data": [
+      "#A0553E",
+      "#714179",
+      "#AF9040",
+      "#03919D"
+    ],
+    "soft": [
+      "#E5B9AB",
+      "#D6B9DA",
+      "#D3C39C",
+      "#9ACFD5"
+    ],
+    "tint": [
+      "#FEECE6",
+      "#FAEAFC",
+      "#F9F0DA",
+      "#DAF6FA"
+    ],
+    "ink": "#4C3027",
+    "scatter_safe": true,
+    "notes": []
+  },
+  "nordic-mist": {
+    "use": "cool neutrals; ECG and other signal views",
+    "names": [
+      "fjord",
+      "slate",
+      "lichen",
+      "heather"
+    ],
+    "data": [
+      "#289BB6",
+      "#37649E",
+      "#74924A",
+      "#7F4D87"
+    ],
+    "soft": [
+      "#9CCDDC",
+      "#ADC6E8",
+      "#BACBA6",
+      "#D6B9DA"
+    ],
+    "tint": [
+      "#DBF6FE",
+      "#E7F1FF",
+      "#EAF4DF",
+      "#FAEAFC"
+    ],
+    "ink": "#193E47",
+    "scatter_safe": false,
+    "notes": []
+  },
+  "coral-sea": {
+    "use": "fresher and brighter; outreach, web, presentations",
+    "names": [
+      "coral",
+      "navy",
+      "seafoam",
+      "marigold"
+    ],
+    "data": [
+      "#CA796B",
+      "#34538F",
+      "#11886D",
+      "#B09142"
+    ],
+    "soft": [
+      "#E6B8AF",
+      "#B1C5E9",
+      "#A0D0C0",
+      "#D3C39C"
+    ],
+    "tint": [
+      "#FEEBE8",
+      "#E9F1FF",
+      "#DDF7EE",
+      "#F9F0DA"
+    ],
+    "ink": "#4D2F2A",
+    "scatter_safe": false,
+    "notes": []
+  },
+  "_neutrals": {
+    "text": "#2B2A28",
+    "text_secondary": "#5F5B57",
+    "axis": "#8C8883",
+    "grid": "#ECE9E5",
+    "fill": "#F4F2EF",
+    "comparator_grey": "#B5B0AA",
+    "dark_surface": "#1E1D1B"
+  }
+}

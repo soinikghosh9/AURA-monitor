@@ -1,0 +1,238 @@
+{
+  "rule": {
+    "window_s": 8.0,
+    "stride_s": 8.0,
+    "fs": 250.0,
+    "channels": 22,
+    "max_hours": 12.0,
+    "fixed_baseline_min": 30.0,
+    "rolling_min": 30.0,
+    "gap_min": 5.0,
+    "min_ref_windows": 10,
+    "statistic": "median and 1.4826*MAD of the reference windows, clip at +-20",
+    "training": "leave-streamed-patient-out on dev detection clips; each training patient normalized by its earliest third of negative clips (same statistic)",
+    "heads": {
+      "feat_gbm": "GradientBoostingClassifier(n_estimators=200, random_state=0)",
+      "feat_logistic": "StandardScaler + LogisticRegression(class_weight=balanced)"
+    },
+    "inclusion": "a development patient's stream is scored if, after its first 30 min of non-ictal windows (removed as the fixed baseline), it contains >= 1 ictal window",
+    "event_threshold": "per stream, the 90th percentile of the other scored streams' scores in the same arm (10% time in warning)",
+    "smoothing": "causal moving average over windows starting in (t-120 s, t]"
+  },
+  "test_patients": [
+    "chbmit_chb02",
+    "chbmit_chb05",
+    "chbmit_chb07",
+    "chbmit_chb10",
+    "chbmit_chb11",
+    "chbmit_chb17",
+    "chbmit_chb21",
+    "siena_PN12",
+    "siena_PN13",
+    "siena_PN14",
+    "siena_PN16"
+  ],
+  "arms": [
+    [
+      "feat_gbm",
+      "none"
+    ],
+    [
+      "feat_gbm",
+      "refreshed"
+    ],
+    [
+      "feat_logistic",
+      "none"
+    ],
+    [
+      "feat_logistic",
+      "refreshed"
+    ],
+    [
+      "EEGNet",
+      "none"
+    ],
+    [
+      "EEGNet",
+      "ea_refreshed"
+    ],
+    [
+      "EEGNet",
+      "tent"
+    ],
+    [
+      "EEGNet",
+      "probe_gbm_none"
+    ],
+    [
+      "EEGNet",
+      "probe_gbm_refreshed"
+    ],
+    [
+      "EEGNet",
+      "adabn_refreshed"
+    ],
+    [
+      "SCCNet",
+      "none"
+    ],
+    [
+      "SCCNet",
+      "ea_refreshed"
+    ],
+    [
+      "SCCNet",
+      "tent"
+    ],
+    [
+      "SCCNet",
+      "probe_gbm_none"
+    ],
+    [
+      "SCCNet",
+      "probe_gbm_refreshed"
+    ],
+    [
+      "SCCNet",
+      "adabn_refreshed"
+    ],
+    [
+      "BIOT",
+      "none"
+    ],
+    [
+      "BIOT",
+      "ea_refreshed"
+    ],
+    [
+      "BIOT",
+      "tent"
+    ],
+    [
+      "BIOT",
+      "probe_gbm_none"
+    ],
+    [
+      "BIOT",
+      "probe_gbm_refreshed"
+    ],
+    [
+      "deep_cnn_raw",
+      "none"
+    ],
+    [
+      "deep_cnn_raw",
+      "ea_refreshed"
+    ],
+    [
+      "deep_cnn_raw",
+      "tent"
+    ],
+    [
+      "deep_cnn_raw",
+      "probe_gbm_none"
+    ],
+    [
+      "deep_cnn_raw",
+      "probe_gbm_refreshed"
+    ],
+    [
+      "deep_cnn_raw",
+      "adabn_refreshed"
+    ],
+    [
+      "auranet_hybrid",
+      "none"
+    ],
+    [
+      "auranet_hybrid",
+      "refreshed"
+    ],
+    [
+      "ensemble",
+      "none"
+    ],
+    [
+      "ensemble",
+      "refreshed"
+    ],
+    [
+      "stacked",
+      "refreshed"
+    ],
+    [
+      "personalized",
+      "refreshed"
+    ]
+  ],
+  "thresholds_dev_q90_smoothed": {
+    "feat_gbm|none": 0.7698811262845993,
+    "feat_logistic|none": 0.792441831032435,
+    "feat_gbm|refreshed": 0.44322296343743806,
+    "feat_logistic|refreshed": 0.5298300733168919,
+    "EEGNet|none": 0.802411137521267,
+    "EEGNet|adabn_stream": 0.9041149016469717,
+    "EEGNet|adabn_refreshed": 0.8405532797798514,
+    "EEGNet|tent": 0.7297917960832516,
+    "EEGNet|probe_lr_none": 0.8403101359804471,
+    "EEGNet|probe_lr_refreshed": 0.2760763384368706,
+    "EEGNet|probe_gbm_none": 0.8648560690383116,
+    "EEGNet|probe_gbm_refreshed": 0.3423791189678013,
+    "EEGNet|ea_refreshed": 0.328259327815249,
+    "SCCNet|none": 0.992697258790334,
+    "SCCNet|adabn_stream": 0.9509402394294739,
+    "SCCNet|adabn_refreshed": 0.8942487319310506,
+    "SCCNet|tent": 0.9010850990811984,
+    "SCCNet|probe_lr_none": 0.991152960062027,
+    "SCCNet|probe_lr_refreshed": 0.1673745725764017,
+    "SCCNet|probe_gbm_none": 0.9248053928216298,
+    "SCCNet|probe_gbm_refreshed": 0.27010513978699846,
+    "SCCNet|ea_refreshed": 0.34652000462038474,
+    "BIOT|none": 0.9993390699227651,
+    "BIOT|tent": 0.9995577565261295,
+    "BIOT|probe_lr_none": 0.9139266471068064,
+    "BIOT|probe_lr_refreshed": 0.17298935635471935,
+    "BIOT|probe_gbm_none": 0.9787806610266367,
+    "BIOT|probe_gbm_refreshed": 0.2018295231937846,
+    "BIOT|ea_refreshed": 0.9474494343002637,
+    "deep_cnn_raw|none": 0.9666223406791687,
+    "deep_cnn_raw|adabn_stream": 0.9252764354149501,
+    "deep_cnn_raw|adabn_refreshed": 0.8631470582913607,
+    "deep_cnn_raw|tent": 0.7379689576745099,
+    "deep_cnn_raw|probe_lr_none": 0.9477083623409271,
+    "deep_cnn_raw|probe_lr_refreshed": 0.12956978928733634,
+    "deep_cnn_raw|probe_gbm_none": 0.9908117492993673,
+    "deep_cnn_raw|probe_gbm_refreshed": 0.0666746999679835,
+    "deep_cnn_raw|ea_refreshed": 0.262046220498875,
+    "auranet_hybrid|none": 0.8154960943579984,
+    "auranet_hybrid|refreshed": 0.5936122075965007,
+    "ensemble|none": 0.6985524696608385,
+    "ensemble|refreshed": 0.3513321042060852,
+    "stacked|refreshed": 0.5769027531147003
+  },
+  "stacked_dev": {
+    "components": [
+      "feat_gbm|refreshed",
+      "EEGNet|ea_refreshed",
+      "SCCNet|ea_refreshed",
+      "BIOT|ea_refreshed",
+      "deep_cnn_raw|ea_refreshed",
+      "auranet_hybrid|refreshed"
+    ],
+    "coef": [
+      0.3360978416985222,
+      -0.06414525729552613,
+      0.05362424442466252,
+      0.046033877958954666,
+      0.06694478627313534,
+      0.08014733442090129
+    ],
+    "intercept": 0.6260710620030036
+  },
+  "primary": "feat_gbm per-stream AUC(refreshed) - AUC(none) over the test streams; two-sided sign-flip test, alpha 0.05",
+  "training": "all development detection clips (earliest-third baseline clips removed); normalized arms: each training patient z-scored by its baseline",
+  "personalization": "mean of refreshed boosted AURA and an L2 logistic (C=0.1) fitted on the first seizure's windows and the non-ictal windows before it, refreshed features",
+  "sha256": "f981a53c31ca12e5de4b4a7c3c1ab6b79e03c76a79de14eef5512328590e9774",
+  "created": "2026-10-04T20:02:54+00:00"
+}

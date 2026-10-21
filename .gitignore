@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+/.venv/
+/datasets/
+/models/
+/results/*
+!/results/_blind_split.json
+!/results/_*_manifest.json
+/scripts/ieeg_login.json

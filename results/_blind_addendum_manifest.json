@@ -1,0 +1,25 @@
+{
+  "declared_utc": "2026-09-28T07:23:12.233777+00:00",
+  "seal": "425f003617027265b103bf7026636c510a1171d078e96bfe08295bdb6d25d61c",
+  "purpose": "Post-seal addendum. Arms introduced AFTER the 2026-08-10 seal are scored ONCE on the sealed TEST subjects, all together, whatever their development results; none is dropped or changed on the basis of a development or test result. Declared before the development runs of these arms completed.",
+  "arms": {
+    "feat_logistic_sub": "18-D vector averaged over the same sub-windows the deep models see; logistic",
+    "feat_gbm_sub": "same vector; gradient boosting (200 trees)",
+    "feat_logistic_base": "18-D vector z-scored by each patient's reserved baseline (typing: Non-IED background); logistic",
+    "feat_white_base": "18-D vector whitened (Ledoit-Wolf) by each patient's reserved baseline; logistic",
+    "BIOT_pt": "published BIOT weights, fine-tuned, seed 0",
+    "CBraMod_pt": "published CBraMod weights, fine-tuned, seed 0",
+    "BIOT_probe": "frozen published BIOT encoder + logistic",
+    "CBraMod_probe": "frozen published CBraMod encoder + logistic",
+    "SCCNet_ea_base": "SCCNet on baseline-referenced Euclidean-aligned input",
+    "deep_cnn_raw_ea_base": "repo CNN on baseline-referenced Euclidean-aligned input"
+  },
+  "scoring": "fit on ALL development subjects; TEST scored once. Baseline-referenced arms reserve one third of each TEST patient's negatives as its baseline; every arm in this addendum, and the original analytic arms re-scored deterministically, are evaluated on that same reduced TEST set so they are paired.",
+  "tasks": [
+    "typing",
+    "ieeg",
+    "scalp",
+    "detect"
+  ],
+  "sha256": "a0a36e4aacbc42ae5fff222278047ed881a43dd334816d4f880ebf2ad29276d8"
+}

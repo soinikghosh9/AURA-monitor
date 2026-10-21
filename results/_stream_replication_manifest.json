@@ -1,0 +1,71 @@
+{
+  "rule": {
+    "window_s": 8.0,
+    "stride_s": 8.0,
+    "fs": 250.0,
+    "channels": 22,
+    "max_hours": 12.0,
+    "fixed_baseline_min": 30.0,
+    "rolling_min": 30.0,
+    "gap_min": 5.0,
+    "min_ref_windows": 10,
+    "statistic": "median and 1.4826*MAD of the reference windows, clip at +-20",
+    "training": "leave-streamed-patient-out on dev detection clips; each training patient normalized by its earliest third of negative clips (same statistic)",
+    "heads": {
+      "feat_gbm": "GradientBoostingClassifier(n_estimators=200, random_state=0)",
+      "feat_logistic": "StandardScaler + LogisticRegression(class_weight=balanced)"
+    },
+    "inclusion": "a development patient's stream is scored if, after its first 30 min of non-ictal windows (removed as the fixed baseline), it contains >= 1 ictal window",
+    "event_threshold": "per stream, the 90th percentile of the other scored streams' scores in the same arm (10% time in warning)",
+    "smoothing": "causal moving average over windows starting in (t-120 s, t]"
+  },
+  "endpoints": {
+    "primary": "feat_gbm: per-stream AUC(refreshed) - AUC(none) over streams not in ORIGINAL; two-sided sign-flip test, alpha 0.05",
+    "secondary": [
+      "feat_logistic, same contrast",
+      "all streams, both heads",
+      "pooled AUC per arm",
+      "event sensitivity, false alarms per 24 h, median latency at the transferred threshold, raw and smoothed"
+    ]
+  },
+  "original_streams": [
+    "chbmit_chb01",
+    "chbmit_chb03",
+    "chbmit_chb04",
+    "chbmit_chb06",
+    "chbmit_chb08",
+    "chbmit_chb09"
+  ],
+  "candidates": [
+    "chbmit_chb01",
+    "chbmit_chb03",
+    "chbmit_chb04",
+    "chbmit_chb06",
+    "chbmit_chb08",
+    "chbmit_chb09",
+    "chbmit_chb12",
+    "chbmit_chb13",
+    "chbmit_chb14",
+    "chbmit_chb15",
+    "chbmit_chb16",
+    "chbmit_chb18",
+    "chbmit_chb19",
+    "chbmit_chb20",
+    "chbmit_chb22",
+    "chbmit_chb23",
+    "chbmit_chb24",
+    "siena_PN00",
+    "siena_PN01",
+    "siena_PN03",
+    "siena_PN05",
+    "siena_PN06",
+    "siena_PN07",
+    "siena_PN09",
+    "siena_PN10",
+    "siena_PN11",
+    "siena_PN17"
+  ],
+  "split": "results/_blind_split.json (dev only)",
+  "sha256": "4bde199c0226c0d6609053f244ec0796b7f6e38ddba7baa3e629b3b2dccf8725",
+  "created": "2026-10-04T12:21:42+00:00"
+}

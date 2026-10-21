@@ -1,0 +1,188 @@
+{
+  "sealed_utc": "2026-08-10T17:27:55.050589+00:00",
+  "seed": 20260810,
+  "test_frac": 0.3,
+  "sha256": "425f003617027265b103bf7026636c510a1171d078e96bfe08295bdb6d25d61c",
+  "cohorts": {
+    "canine_continuous": {
+      "dev": [
+        "Dog_A0002a",
+        "Dog_A0003",
+        "Dog_A0004"
+      ],
+      "test": [
+        "Dog_A0001"
+      ]
+    },
+    "canine_ieeg": {
+      "dev": [
+        "Dog_A0002a",
+        "Dog_A0002b",
+        "Dog_A0003"
+      ],
+      "test": [
+        "Dog_A0001",
+        "Dog_A0004"
+      ]
+    },
+    "kaggle_ieeg": {
+      "dev": [
+        "Dog_1",
+        "Dog_2",
+        "Dog_3",
+        "Dog_4",
+        "Dog_5"
+      ],
+      "test": [
+        "Patient_1",
+        "Patient_2"
+      ]
+    },
+    "scalp_chbmit": {
+      "dev": [
+        "chb01",
+        "chb03",
+        "chb04",
+        "chb06",
+        "chb08",
+        "chb09",
+        "chb12",
+        "chb13",
+        "chb14",
+        "chb15",
+        "chb16",
+        "chb18",
+        "chb19",
+        "chb20",
+        "chb22",
+        "chb23",
+        "chb24"
+      ],
+      "test": [
+        "chb02",
+        "chb05",
+        "chb07",
+        "chb10",
+        "chb11",
+        "chb17",
+        "chb21"
+      ]
+    },
+    "scalp_siena": {
+      "dev": [
+        "PN00",
+        "PN01",
+        "PN03",
+        "PN05",
+        "PN06",
+        "PN07",
+        "PN09",
+        "PN10",
+        "PN11",
+        "PN17"
+      ],
+      "test": [
+        "PN12",
+        "PN13",
+        "PN14",
+        "PN16"
+      ]
+    },
+    "vepiset_typing": {
+      "dev": [
+        "DA001005",
+        "DA001006",
+        "DA001007",
+        "DA001009",
+        "DA00100A",
+        "DA00100D",
+        "DA00100F",
+        "DA00100G",
+        "DA00100L",
+        "DA00100M",
+        "DA00100N",
+        "DA00100O",
+        "DA00100P",
+        "DA00100Q",
+        "DA00100R",
+        "DA00100S",
+        "DA00100T",
+        "DA00100W",
+        "DA00100X",
+        "DA00100Y",
+        "DA00100Z",
+        "DA001010",
+        "DA00102Q",
+        "DA00102R",
+        "DA00102S",
+        "DA00102T",
+        "DA00102V",
+        "DA00102W",
+        "DA00102X",
+        "DA001030",
+        "DA001031",
+        "DA001032",
+        "DA001033",
+        "DA001034",
+        "DA001035",
+        "DA001036",
+        "DA001037",
+        "DA001038",
+        "DA001039",
+        "DA00103A",
+        "DA00103B",
+        "DA00103D",
+        "DA00103G",
+        "DA00103H",
+        "DA00103I",
+        "DA00103M",
+        "DA00103Q",
+        "DA00103R",
+        "DA00103S",
+        "DA00103T",
+        "DC113049",
+        "DC11304C",
+        "DC11304D",
+        "DC11304G",
+        "DC11304H",
+        "DC11304I",
+        "DC11304J",
+        "DC11304K",
+        "DC11304L"
+      ],
+      "test": [
+        "DA001003",
+        "DA001008",
+        "DA00100B",
+        "DA00100C",
+        "DA00100E",
+        "DA00100H",
+        "DA00100I",
+        "DA00100K",
+        "DA00100U",
+        "DA00100V",
+        "DA00102U",
+        "DA00102Y",
+        "DA00103C",
+        "DA00103E",
+        "DA00103F",
+        "DA00103J",
+        "DA00103K",
+        "DA00103L",
+        "DA00103N",
+        "DA00103O",
+        "DA00103P",
+        "DA00103U",
+        "DA00103V",
+        "DC11304E",
+        "DC11304F"
+      ]
+    }
+  },
+  "rules": [
+    "TEST is scored ONCE, for all models simultaneously, after DEV results are frozen.",
+    "Any model change prompted by a TEST result makes that result contaminated; say so.",
+    "Report DEV and TEST side by side per model; the gap measures development optimism.",
+    "Split is by subject: no subject contributes windows to both sides."
+  ]
+}
